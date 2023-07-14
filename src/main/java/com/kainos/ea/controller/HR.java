@@ -55,12 +55,7 @@ public class HR {
     @Path("/employee/{employeeId}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getEmployeeById(@PathParam("employeeId") int employeeId) {
-        try {
-            return Response.status(HttpStatus.OK_200).entity(employeeService.getEmployee(employeeId)).build();
-        } catch (SQLException | DatabaseConnectionException e) {
-            System.out.println(e);
-            return Response.status(HttpStatus.INTERNAL_SERVER_ERROR_500).build();
-        }
+        return Response.status(200).entity("Patrick is the best").build();
     }
 
     @GET
